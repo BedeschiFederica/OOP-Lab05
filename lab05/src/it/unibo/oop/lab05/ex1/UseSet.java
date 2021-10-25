@@ -58,5 +58,13 @@ public final class UseSet {
     		}
     	}
     	System.out.println("even: " + allEven);
+    	
+    	Iterator i = set.iterator();
+    	while (i.hasNext()) {
+    		if (i.next().equals("5")) {
+    			i.remove();
+    		}
+    	}
+    	System.out.println(set);
     }
 }
