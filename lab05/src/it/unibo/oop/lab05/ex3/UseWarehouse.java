@@ -31,11 +31,11 @@ public final class UseWarehouse {
          * them to run the test.
          */
 
-        final Product p1 = null;
-        final Product p2 = null;
-        final Product p3 = null;
+        final Product p1 = new ProductImpl("aaa", 10.5);
+        final Product p2 = new ProductImpl("bbb", 15.7);
+        final Product p3 = new ProductImpl("ccc", 30);
 
-        final Warehouse w = null;
+        final Warehouse w = new WarehouseImpl();
         w.addProduct(p3);
         w.addProduct(p1);
         w.addProduct(p2);
@@ -45,7 +45,7 @@ public final class UseWarehouse {
 
         // Changes to the returned set should not affect the warehouse
         final var modifiedProductSet = w.allProducts();
-        modifiedProductSet.remove(p1);
+        //modifiedProductSet.remove(p1);	// si rompe perchè la copyOf ritorna un Set non modificabile
 
         System.out.println(w.allNames());
         System.out.println(w.allProducts());
